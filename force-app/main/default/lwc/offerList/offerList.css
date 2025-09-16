@@ -1,0 +1,69 @@
+.offer-list {
+    width: 100%;
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr;
+    gap: 1px;
+    background-color: #dddbda;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.offer-header,
+.offer-row {
+    display: contents;
+}
+
+.offer-header span {
+    background-color: #f3f2f2;
+    padding: 12px;
+    font-weight: 600;
+    color: #2c2c2c;
+    text-align: left;
+}
+
+.offer-row span {
+    background-color: white;
+    padding: 12px;
+    color: #2c2c2c;
+}
+
+.amount {
+    font-weight: 600;
+    color: #4CAF50;
+}
+
+.stage {
+    text-transform: capitalize;
+}
+
+.status {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-draft {
+    color: #9E9E9E;
+}
+
+.status-submitted {
+    color: #2196F3;
+}
+
+.status-accepted {
+    color: #4CAF50;
+}
+
+.status-rejected {
+    color: #F44336;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: #706e6b;
+    background: white;
+    border-radius: 4px;
+}

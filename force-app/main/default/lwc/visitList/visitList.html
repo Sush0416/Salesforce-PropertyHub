@@ -1,0 +1,38 @@
+<template>
+    <div class="visit-list">
+        <template if:true={hasVisits}>
+            <div class="visit-grid">
+                <div class="visit-header">
+                    <span>Date/Time</span>
+                    <span>Lead</span>
+                    <span>Contact</span>
+                    <span>Status</span>
+                </div>
+                
+                <template for:each={formattedVisits} for:item="visit">
+                    <div key={visit.Id} class="visit-row">
+                        <span>{visit.formattedDateTime}</span>
+                        <span>{visit.leadName}</span>
+                        <span>
+                            <template if:true={visit.leadEmail}>
+                                {visit.leadEmail}<br>
+                            </template>
+                            <template if:true={visit.leadPhone}>
+                                {visit.leadPhone}
+                            </template>
+                        </span>
+                        <span class="status status-{visit.Status__c.toLowerCase()}">
+                            {visit.Status__c}
+                        </span>
+                    </div>
+                </template>
+            </div>
+        </template>
+        
+        <template if:false={hasVisits}>
+            <div class="empty-state">
+                <p>No visits scheduled for this property.</p>
+            </div>
+        </template>
+    </div>
+</template>

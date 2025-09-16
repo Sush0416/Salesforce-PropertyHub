@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-Property__c</defaultLandingTab>
+    <description>PropertyHub Real Estate CRM Application</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavAutoTempTabsDisabled>
+    <label>PropertyHub</label>
+    <navType>Standard</navType>
+    <tabs>standard-Property__c</tabs>
+    <tabs>standard-Property_Visit__c</tabs>
+    <tabs>standard-Offer__c</tabs>
+    <tabs>standard-Home</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>PropertyHub_Utility</utilityBar>
+</CustomApplication>

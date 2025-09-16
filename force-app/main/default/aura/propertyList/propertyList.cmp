@@ -1,0 +1,54 @@
+<aura:component controller="PropertyController" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="properties" type="Property__c[]" />
+    <aura:attribute name="filters" type="Map" default="{}" />
+    <aura:attribute name="loading" type="Boolean" default="true" />
+    <aura:attribute name="error" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="property-list-container">
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem size="12" mediumDeviceSize="3" largeDeviceSize="3">
+                <c:propertyFilter onfilterchange="{!c.handleFilterChange}" />
+            </lightning:layoutItem>
+            
+            <lightning:layoutItem size="12" mediumDeviceSize="9" largeDeviceSize="9">
+                <div class="content-area">
+                    <aura:if isTrue="{!v.loading}">
+                        <div class="loading-container">
+                            <lightning-spinner alternativeText="Loading" size="large"></lightning-spinner>
+                            <p>Loading properties...</p>
+                        </div>
+                    </aura:if>
+                    
+                    <aura:if isTrue="{!not(empty(v.error))}">
+                        <div class="error-container">
+                            <lightning-icon iconName="utility:error" size="small"></lightning-icon>
+                            <span class="error-message">{!v.error}</span>
+                        </div>
+                    </aura:if>
+                    
+                    <aura:if isTrue="{!and(not(v.loading), empty(v.error))}">
+                        <aura:if isTrue="{!empty(v.properties)}">
+                            <div class="properties-grid">
+                                <aura:iteration items="{!v.properties}" var="property">
+                                    <c:propertyCard 
+                                        property="{!property}" 
+                                        onpropertyselect="{!c.handlePropertySelect}" 
+                                    />
+                                </aura:iteration>
+                            </div>
+                            <aura:set name="else">
+                                <div class="empty-state">
+                                    <lightning-icon iconName="action:list" size="large"></lightning-icon>
+                                    <h3>No properties found</h3>
+                                    <p>Try adjusting your filters to see more results.</p>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </aura:if>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

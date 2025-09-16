@@ -1,0 +1,56 @@
+.visit-list {
+    width: 100%;
+}
+
+.visit-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+    gap: 1px;
+    background-color: #dddbda;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.visit-header,
+.visit-row {
+    display: contents;
+}
+
+.visit-header span {
+    background-color: #f3f2f2;
+    padding: 12px;
+    font-weight: 600;
+    color: #2c2c2c;
+    text-align: left;
+}
+
+.visit-row span {
+    background-color: white;
+    padding: 12px;
+    color: #2c2c2c;
+}
+
+.status {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-scheduled {
+    color: #4CAF50;
+}
+
+.status-completed {
+    color: #2196F3;
+}
+
+.status-cancelled {
+    color: #F44336;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: #706e6b;
+    background: white;
+    border-radius: 4px;
+}
