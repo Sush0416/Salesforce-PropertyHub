@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Property Visit</label>
+    <pluralLabel>Property Visits</pluralLabel>
+    <nameField>
+        <label>Visit Name</label>
+        <type>Text</type>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <fields>
+        <fullName>Property__c</fullName>
+        <type>MasterDetail</type>
+        <label>Property</label>
+        <referenceTo>Property__c</referenceTo>
+        <relationshipName>Visits</relationshipName>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <type>Lookup</type>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Property_Visits</relationshipLabel>
+        <relationshipName>Property_Visits</relationshipName>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>Visit_DateTime__c</fullName>
+        <type>DateTime</type>
+        <label>Visit Date/Time</label>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <type>Picklist</type>
+        <label>Status</label>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Scheduled</fullName>
+                    <default>true</default>
+                    <label>Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+</CustomObject>
