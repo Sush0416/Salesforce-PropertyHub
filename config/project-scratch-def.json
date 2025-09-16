@@ -1,13 +1,30 @@
 {
-  "orgName": "Demo company",
-  "edition": "Developer",
-  "features": ["EnableSetPasswordInApi"],
+  "orgName": "PropertyHub Real Estate",
+  "edition": "Enterprise",
+  "features": ["EnableSetPasswordInApi", "ServiceCloud", "PlatformConnect"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
+    "securitySettings": {
+      "passwordPolicies": {
+        "enableSetPasswordInApi": true
+      }
+    },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
+    },
+    "companySettings": {
+      "enableFiscalYear": true,
+      "fiscalYear": "January-December"
+    }
+  },
+  "objectSettings": {
+    "opportunity": {
+      "sharingModel": "private"
+    },
+    "account": {
+      "sharingModel": "readWrite"
     }
   }
 }

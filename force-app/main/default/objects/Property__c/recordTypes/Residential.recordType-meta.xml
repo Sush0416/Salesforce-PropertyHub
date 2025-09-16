@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Residential</fullName>
+    <active>true</active>
+    <description>Residential properties including houses, apartments, and condos</description>
+    <label>Residential</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Property_Type__c</picklist>
+        <values>
+            <fullName>Condo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multi Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Townhouse</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Available</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sold</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
