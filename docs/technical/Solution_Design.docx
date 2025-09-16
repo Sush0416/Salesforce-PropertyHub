@@ -1,0 +1,18 @@
+# Technical Architecture
+
+## Custom Objects
+- Property__c: Real estate listings
+- Property_Visit__c: Scheduled visits
+- Offer__c: Purchase offers
+
+## Automation Components
+- Lead assignment rules based on territory
+- Property matching algorithm
+- Visit scheduling flows
+- Offer approval process
+
+## Integration Points
+- Web-to-Lead forms
+- SMS integration for notifications
+- Calendar sync (Google/Outlook)
+- Document management system

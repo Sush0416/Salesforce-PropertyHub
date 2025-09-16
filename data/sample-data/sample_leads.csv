@@ -1,0 +1,4 @@
+FirstName,LastName,Email,Phone,Budget,Timeline,PropertyType
+John,Smith,john@email.com,555-0101,750000,0-3 months,Single Family
+Sarah,Johnson,sarah@email.com,555-0102,500000,3-6 months,Condo
+Mike,Wilson,mike@email.com,555-0103,1000000,6-12 months,Single Family

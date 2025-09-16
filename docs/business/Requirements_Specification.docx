@@ -1,0 +1,25 @@
+# Functional Requirements
+
+## Lead Management
+- Automated lead capture from web forms
+- Territory-based lead assignment
+- Lead scoring based on budget and timeline
+- Email/SMS notifications for new leads
+
+## Property Management
+- Centralized property database
+- Status tracking (Available/Under Contract/Sold)
+- Amenity and feature cataloging
+- Image gallery support
+
+## Visit Scheduling
+- Calendar integration for agents
+- Automated customer confirmations
+- Visit feedback collection
+- Conflict prevention
+
+## Reporting & Analytics
+- Real-time sales dashboards
+- Lead conversion funnel
+- Agent performance metrics
+- Property performance reports

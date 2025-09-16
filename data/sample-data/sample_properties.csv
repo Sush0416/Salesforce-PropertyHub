@@ -1,0 +1,11 @@
+Name,Address__c,City__c,State__c,Zip_Code__c,Price__c,Bedrooms__c,Bathrooms__c,Square_Feet__c,Property_Type__c,Status__c,Description__c
+Sunset Villa,123 Sunset Blvd,Los Angeles,CA,90001,1250000,4,3.5,2800,Single Family,Available,"Beautiful modern villa with pool and mountain views"
+Urban Loft,456 Downtown Ave,New York,NY,10001,850000,2,2,1200,Condo,Available,"Luxury loft in heart of Manhattan with concierge"
+Garden Home,789 Oak Street,Chicago,IL,60601,675000,3,2,2100,Single Family,Available,"Charming home with large garden and updated kitchen"
+City View Condo,101 Skyline Dr,San Francisco,CA,94101,950000,1,1,850,Condo,Available,"Stunning city views from this modern high-rise condo"
+Suburban Estate,222 Maple Road,Boston,MA,02101,1850000,5,4.5,4200,Single Family,Available,"Spacious family home in prestigious neighborhood"
+Riverside Townhome,333 River Lane,Seattle,WA,98101,725000,3,2.5,1800,Townhouse,Available,"Waterfront townhome with private dock and views"
+Metro Apartment,444 Urban Ave,Austin,TX,73301,550000,2,2,1100,Condo,Available,"Trendy apartment in vibrant downtown district"
+Heritage House,555 Historic St,Philadelphia,PA,19101,895000,4,3,2400,Single Family,Available,"Restored historic home with original features"
+Lakeside Retreat,666 Lakeview Dr,Denver,CO,80201,1100000,4,3,2900,Single Family,Available,"Private lake access and mountain scenery"
+Executive Suite,777 Business Blvd,Atlanta,GA,30301,450000,1,1,950,Condo,Available,"Perfect for professionals in financial district"
