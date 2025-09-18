@@ -1,22 +1,13 @@
 {
-  "orgName": "PropertyHub Real Estate",
+  "orgName": "Salesforce PropertyHub",
   "edition": "Enterprise",
-  "features": ["EnableSetPasswordInApi", "ServiceCloud", "PlatformConnect"],
+  "features": ["PlatformConnect:1"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
-    "securitySettings": {
-      "passwordPolicies": {
-        "enableSetPasswordInApi": true
-      }
-    },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
-    },
-    "companySettings": {
-      "enableFiscalYear": true,
-      "fiscalYear": "January-December"
     }
   },
   "objectSettings": {

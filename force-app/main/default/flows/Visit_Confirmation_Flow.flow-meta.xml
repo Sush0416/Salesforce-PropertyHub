@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Confirms visit scheduling and sends notifications</description>
+    <interviewLabel>Visit Confirmation Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Visit Confirmation Flow</label>
+    <processType>AutoLaunchedFlow</processType>
+    <status>InvalidDraft</status>
+</Flow>

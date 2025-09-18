@@ -7,4 +7,5 @@
     <relationshipLabel>Offers</relationshipLabel>
     <relationshipName>Offers</relationshipName>
     <required>true</required>
+    <deleteConstraint>Restrict</deleteConstraint>
 </CustomField>
