@@ -20,10 +20,13 @@ trigger PropertyApprovalTrigger on Property__c (before update, after update) {
         for (Property__c newProp : Trigger.new) {
             Property__c oldProp = Trigger.oldMap.get(newProp.Id);
             
-            if (newProp.Approval_Status__c == 'Submitted' && oldProp.Approval_Status__c == 'Draft') {
+            // Handle approval submissions
+            if (newProp.Approval_Status__c == 'Submitted' && 
+                oldProp.Approval_Status__c == 'Draft') {
                 propertiesForApproval.add(newProp);
             }
             
+            // Handle approval results
             if ((newProp.Approval_Status__c == 'Approved' || 
                  newProp.Approval_Status__c == 'Rejected') && 
                 oldProp.Approval_Status__c == 'Submitted') {
@@ -36,7 +39,6 @@ trigger PropertyApprovalTrigger on Property__c (before update, after update) {
         }
         
         if (!approvalResults.isEmpty()) {
-            // FIXED: now passing both parameters
             PropertyApprovalHandler.handleApprovalResult(Trigger.new, approvalResults);
         }
     }
