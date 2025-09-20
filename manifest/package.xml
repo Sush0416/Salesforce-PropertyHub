@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 
-    <!-- Apex Code -->
+    <!-- Apex Classes -->
     <types>
         <members>*</members>
         <name>ApexClass</name>
     </types>
+
+    <!-- Apex Triggers -->
     <types>
         <members>*</members>
         <name>ApexTrigger</name>
@@ -71,9 +73,10 @@
         <name>Dashboard</name>
     </types>
 
-    <!-- Email Templates -->
+    <!-- Email Templates (only include templates that actually exist locally) -->
     <types>
-        <members>*</members>
+        <members>Visit_Confirmation</members>
+        <!-- Remove Property_Approval_Request since its .email file is missing -->
         <name>EmailTemplate</name>
     </types>
 

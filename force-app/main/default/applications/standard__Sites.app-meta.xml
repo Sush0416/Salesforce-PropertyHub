@@ -7,4 +7,5 @@
     <tabs>standard-Chatter</tabs>
     <tabs>Property__c</tabs>
     <tabs>Property_Visit__c</tabs>
+    <tabs>Commission__c</tabs>
 </CustomApplication>

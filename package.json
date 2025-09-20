@@ -17,6 +17,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "child_process": "^1.0.2",
     "fs-extra": "^10.0.0",
     "sfdx-node": "^1.0.0"
   },
@@ -45,5 +46,21 @@
     "**/lwc/**": [
       "sfdx-lwc-jest -- --bail --findRelatedTests --passWithNoTests"
     ]
-  }
+  },
+  "main": "eslint.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sush0416/Salesforce-PropertyHub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sush0416/Salesforce-PropertyHub/issues"
+  },
+  "homepage": "https://github.com/Sush0416/Salesforce-PropertyHub#readme"
 }

@@ -19,9 +19,13 @@
     <tabs>standard-ChangeRequest</tabs>
     <tabs>Property__c</tabs>
     <tabs>Property_Visit__c</tabs>
+    <tabs>Commission__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Commission__c</tab>
+        </mappings>
         <mappings>
             <tab>Property_Visit__c</tab>
         </mappings>

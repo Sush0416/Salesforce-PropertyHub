@@ -4,7 +4,8 @@
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
     <label>Agent</label>
-    <referenceTo>User</referenceTo>
+    <referenceTo>Agent__c</referenceTo>
+    <relationshipLabel>Properties</relationshipLabel>
     <relationshipName>Properties</relationshipName>
     <required>false</required>
     <trackHistory>false</trackHistory>

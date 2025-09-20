@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Property_Price_Positive</fullName>
+    <active>true</active>
+    <description>The listing price must be a positive value.</description>
+    <errorConditionFormula>OR(
+  ISBLANK(Asking_Price__c),
+  Asking_Price__c &lt;= 0
+)</errorConditionFormula>
+    <errorMessage>Asking Price must be greater than 0.</errorMessage>
+</ValidationRule>

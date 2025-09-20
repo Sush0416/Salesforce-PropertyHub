@@ -10,9 +10,13 @@
     <tabs>standard-Pricebook2</tabs>
     <tabs>Property__c</tabs>
     <tabs>Property_Visit__c</tabs>
+    <tabs>Commission__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>RevenueCloudConsole_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Commission__c</tab>
+        </mappings>
         <mappings>
             <tab>Property_Visit__c</tab>
         </mappings>

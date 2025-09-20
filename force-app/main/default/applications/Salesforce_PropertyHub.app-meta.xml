@@ -30,6 +30,7 @@
     <tabs>Property__c</tabs>
     <tabs>Property_Visit__c</tabs>
     <tabs>standard-MktAiPredictiveInsight</tabs>
+    <tabs>Commission__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Salesforce_PropertyHub_UtilityBar</utilityBar>
 </CustomApplication>

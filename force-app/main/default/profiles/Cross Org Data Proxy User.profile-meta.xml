@@ -214,6 +214,26 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Commission__c.Agent__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Commission__c.Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Commission__c.Property__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Commission__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Enrollment__c.Enrollment_Date__c</field>
         <readable>true</readable>
@@ -249,14 +269,29 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Offer__c.Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Offer__c.Lead__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Offer__c.Offer_Amount__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Offer__c.Offer_Date__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Offer__c.Opportunity__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -291,6 +326,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Patient__c.Phone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Property_Visit__c.Agent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Property_Visit__c.Assigned_Agent__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -339,6 +384,11 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Property__c.Asking_Price__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Property__c.Bathrooms__c</field>
         <readable>false</readable>
@@ -360,6 +410,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Property__c.Lead__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Property__c.Listing_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -367,6 +422,11 @@
         <editable>false</editable>
         <field>Property__c.Location__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Property__c.Photo_URL__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -428,6 +488,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Agent_Territory__c-Agent Territory Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Agent__c-Agent Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>AlternativePaymentMethod-Alternative Payment Method Layout</layout>
@@ -517,6 +580,9 @@
         <layout>CaseMilestone-Case Milestone Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Commission__c-Commission Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>CommunityMemberLayout-Community Member Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -565,6 +631,9 @@
         <layout>Customer-Customer Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Customer__c-Customer Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>DandBCompany-D%26B Company Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -572,6 +641,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>DataUsePurpose-Data Use Purpose Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Date__c-Date Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>DigitalWallet-Digital Wallet Layout</layout>
@@ -598,6 +670,9 @@
         <layout>Event-Event Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Feature__c-Feature Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>FeedItem-Feed Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -605,6 +680,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>FinanceTransaction-Finance Transaction Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FlowRecord-Flow Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>FulfillmentOrder-Fulfillment Order Layout</layout>
@@ -662,6 +740,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Macro-Macro Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Manager__c-Manager Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Medical_Note__c-Medical Note Layout</layout>
@@ -722,6 +803,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>ProductConsumptionSchedule-Product Consumption Schedule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Property_Features__c-Property Feature Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Property_Visit__c-Property Visit Layout</layout>
@@ -843,6 +927,9 @@
         <layout>TimeSlot-Time Slot Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Time__c-Time Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>User-User Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -918,6 +1005,10 @@
         <recordType>Property__c.Residential</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
+        <tab>Commission__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Property_Visit__c</tab>
         <visibility>DefaultOn</visibility>

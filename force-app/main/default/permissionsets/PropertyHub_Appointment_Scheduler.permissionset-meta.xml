@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grants access to the Schedule_Property_Visit Flow
+
+Grants access to required fields for scheduling</description>
+    <hasActivationRequired>true</hasActivationRequired>
+    <label>PropertyHub_Appointment_Scheduler</label>
+    <license>Salesforce Platform</license>
+</PermissionSet>

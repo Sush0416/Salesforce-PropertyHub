@@ -182,7 +182,11 @@
     <tabs>standard-Lead</tabs>
     <tabs>Property__c</tabs>
     <tabs>Property_Visit__c</tabs>
+    <tabs>Commission__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>Commission__c</tab>
+        </mappings>
         <mappings>
             <tab>Property_Visit__c</tab>
         </mappings>
