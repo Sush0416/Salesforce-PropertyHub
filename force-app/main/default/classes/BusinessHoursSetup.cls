@@ -1,31 +1,12 @@
 public class BusinessHoursSetup {
     public static void createDefaultBusinessHours() {
-        // Check if business hours already exist
-        List<BusinessHours> existingHours = [SELECT Id FROM BusinessHours WHERE Name = 'PropertyHub Business Hours'];
-        
-        if (existingHours.isEmpty()) {
-            BusinessHours bh = new BusinessHours(
-                Name = 'PropertyHub Business Hours',
-                MondayStartTime = Time.newInstance(9, 0, 0, 0),
-                MondayEndTime = Time.newInstance(17, 0, 0, 0),
-                TuesdayStartTime = Time.newInstance(9, 0, 0, 0),
-                TuesdayEndTime = Time.newInstance(17, 0, 0, 0),
-                WednesdayStartTime = Time.newInstance(9, 0, 0, 0),
-                WednesdayEndTime = Time.newInstance(17, 0, 0, 0),
-                ThursdayStartTime = Time.newInstance(9, 0, 0, 0),
-                ThursdayEndTime = Time.newInstance(17, 0, 0, 0),
-                FridayStartTime = Time.newInstance(9, 0, 0, 0),
-                FridayEndTime = Time.newInstance(17, 0, 0, 0),
-                SaturdayStartTime = null,
-                SaturdayEndTime = null,
-                SundayStartTime = null,
-                SundayEndTime = null,
-                IsActive = true,
-                TimeZoneSidKey = 'America/New_York'
-            );
-            insert bh;
-            System.debug('Default business hours created: ' + bh.Id);
-        }
+        // Note: BusinessHours cannot be inserted directly via DML
+        // This method is for documentation purposes only
+        // In a real implementation, you would need to use the BusinessHours UI
+        // or contact Salesforce support to create default business hours
+
+        System.debug('BusinessHoursSetup: Direct BusinessHours creation is not supported via Apex DML.');
+        System.debug('Please create business hours manually through the Salesforce UI or contact support.');
     }
     
     public static void createHolidays() {

@@ -3,4 +3,5 @@
     <label>Offers</label>
     <motif>Custom53: Document</motif>
     <url>https://www.example.com</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
 </CustomTab>

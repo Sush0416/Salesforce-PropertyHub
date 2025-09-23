@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="List of Properties">
+        <ul>
+            <template for:each={properties} for:item="prop">
+                <li key={prop.Id}>
+                    {prop.Name} - ${prop.Price__c} - Status: {prop.Status__c}
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

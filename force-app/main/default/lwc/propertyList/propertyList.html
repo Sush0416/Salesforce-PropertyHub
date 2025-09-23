@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Available Properties" icon-name="standard:product_item">
+        <div class="slds-p-around_medium">
+            <template for:each={properties} for:item="property">
+                <div key={property.id} class="slds-box slds-m-bottom_small">
+                    <h3>{property.name}</h3>
+                    <p><strong>Price:</strong> ₹{property.price}</p>
+                    <p><strong>Status:</strong> {property.status}</p>
+                    <p><strong>Type:</strong> {property.type}</p>
+                    <lightning-button 
+                        label="View Details" 
+                        onclick={handleViewDetails}
+                        data-id={property.id}>
+                    </lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

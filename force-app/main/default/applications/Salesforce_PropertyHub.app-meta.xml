@@ -31,6 +31,8 @@
     <tabs>Property_Visit__c</tabs>
     <tabs>standard-MktAiPredictiveInsight</tabs>
     <tabs>Commission__c</tabs>
+    <tabs>standard-Contract</tabs>
+    <tabs>Real_Estate_Dashboard</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Salesforce_PropertyHub_UtilityBar</utilityBar>
 </CustomApplication>

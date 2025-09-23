@@ -1,31 +1,32 @@
 <template>
-    <article class="property-card" onclick={handleCardClick}>
-        <div class="property-image">
-            <img src={propertyImage} alt={property.Name} class="image-placeholder" />
-        </div>
-        <div class="property-content">
-            <h3 class="property-title">{property.Name}</h3>
-            <p class="property-address">{property.Address__c}, {property.City__c}, {property.State__c} {property.Zip_Code__c}</p>
-            
-            <div class="property-details">
-                <div class="detail-item">
-                    <span class="detail-label">Price:</span>
-                    <span class="detail-value">{formattedPrice}</span>
+    <lightning-card title="Property Information" icon-name="standard:address">
+        <div class="slds-p-around_medium">
+            <h2 class="slds-text-heading_medium">{propertyName}</h2>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <p><strong>Price:</strong> ${propertyPrice}</p>
+                    <p><strong>Status:</strong> 
+                        <span class="slds-badge">{propertyStatus}</span>
+                    </p>
                 </div>
-                <div class="detail-item">
-                    <span class="detail-label">Beds/Baths:</span>
-                    <span class="detail-value">{property.Bedrooms__c} BD / {property.Bathrooms__c} BA</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Sq Ft:</span>
-                    <span class="detail-value">{property.Square_Feet__c}</span>
+                <div class="slds-col slds-size_1-of-2">
+                    <p><strong>Location:</strong> {propertyLocation}</p>
+                    <p><strong>Type:</strong> {propertyType}</p>
                 </div>
             </div>
-            
-            <div class="property-footer">
-                <span class="property-type">{property.Property_Type__c}</span>
-                <span class="property-status {property.Status__c.toLowerCase()}">{property.Status__c}</span>
+            <div class="slds-m-top_medium">
+                <lightning-button 
+                    label="Schedule Visit" 
+                    variant="brand"
+                    onclick={handleScheduleVisit}
+                    class="slds-m-right_small">
+                </lightning-button>
+                <lightning-button 
+                    label="Contact Agent" 
+                    variant="outline"
+                    onclick={handleContactAgent}>
+                </lightning-button>
             </div>
         </div>
-    </article>
+    </lightning-card>
 </template>

@@ -1,0 +1,29 @@
+<!-- Improved HTML with better styling -->
+<template>
+    <lightning-card title="List of Properties" icon-name="standard:address">
+        <div class="slds-p-around_medium">
+            <template if:true={properties.data}>
+                <ul class="slds-list slds-list_divided">
+                    <template for:each={properties.data} for:item="prop">
+                        <li key={prop.Id} class="slds-item slds-p-around_small">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <strong>{prop.Name}</strong>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-text-align_right">
+                                    ${prop.Price__c}
+                                </div>
+                                <div class="slds-col slds-size_1-of-1">
+                                    <lightning-badge label={prop.Status__c} class="slds-m-top_x-small"></lightning-badge>
+                                </div>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:true={properties.error}>
+                <p class="slds-text-color_error">{properties.error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

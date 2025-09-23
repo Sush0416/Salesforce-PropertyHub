@@ -1,26 +1,40 @@
 import { LightningElement, api } from 'lwc';
 
 export default class PropertyCard extends LightningElement {
-    @api property;
-    
-    get formattedPrice() {
-        if (!this.property.Price__c) return '$0';
-        return new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            minimumFractionDigits: 0
-        }).format(this.property.Price__c);
+    // Public properties that can be set from App Builder
+    @api propertyName = 'Luxury Villa';
+    @api propertyPrice = '2,50,00,000';
+    @api propertyStatus = 'Available';
+    @api propertyLocation = 'Mumbai, India';
+    @api propertyType = 'Villa';
+
+    handleScheduleVisit() {
+        console.log('Schedule visit button clicked for: ', this.propertyName);
+        
+        // Show confirmation message
+        this.dispatchEvent(new CustomEvent('schedulevisit', {
+            detail: {
+                propertyName: this.propertyName,
+                propertyId: 'sample-id-123'
+            },
+            bubbles: true
+        }));
+        
+        // Optional: Show alert to user
+        alert(`Visit scheduled for ${this.propertyName}! Our agent will contact you shortly.`);
     }
-    
-    get propertyImage() {
-        // Placeholder image - in real implementation, use actual property images
-        return 'https://via.placeholder.com/300x200/4CAF50/white?text=Property+Image';
-    }
-    
-    handleCardClick() {
-        const selectEvent = new CustomEvent('propertyselect', {
-            detail: this.property.Id
-        });
-        this.dispatchEvent(selectEvent);
+
+    handleContactAgent() {
+        console.log('Contact agent button clicked for: ', this.propertyName);
+        
+        this.dispatchEvent(new CustomEvent('contactagent', {
+            detail: {
+                propertyName: this.propertyName,
+                message: 'I am interested in this property'
+            },
+            bubbles: true
+        }));
+        
+        alert(`Agent will contact you about ${this.propertyName} within 24 hours.`);
     }
 }

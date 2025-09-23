@@ -13,7 +13,6 @@ private class PropertyControllerTest {
                 State__c = 'CA',
                 Zip_Code__c = '9000' + i,
                 Price__c = 500000 + (i * 100000),
-                Bedrooms__c = 3 + i,
                 Bathrooms__c = 2 + (i * 0.5),
                 Square_Feet__c = 2000 + (i * 500),
                 Property_Type__c = 'Single Family',
@@ -42,7 +41,8 @@ private class PropertyControllerTest {
             testVisits.add(new Property_Visit__c(
                 Property__c = testProperties[i].Id,
                 Lead__c = testLeads[i].Id,
-                Visit_DateTime__c = DateTime.now().addDays(7),
+                Visit_Date__c = Date.today().addDays(7),
+                Visit_Time__c = Time.newInstance(10, 0, 0, 0),
                 Status__c = 'Scheduled'
             ));
         }
