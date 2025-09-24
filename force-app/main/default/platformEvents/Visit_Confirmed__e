@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlatformEventType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Visit Confirmed</label>
+    <description>Event when a property visit is confirmed</description>
+</PlatformEventType>
