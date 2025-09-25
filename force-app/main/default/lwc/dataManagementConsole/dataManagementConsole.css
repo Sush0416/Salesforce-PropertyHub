@@ -1,0 +1,59 @@
+.data-management-console {
+    padding: 1rem;
+}
+
+.slds-tabs_default__nav {
+    background: white;
+    border-bottom: 1px solid #d8dde6;
+}
+
+.slds-tabs_default__content {
+    background: white;
+    padding: 1rem;
+}
+
+.slds-spinner_container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.slds-box {
+    padding: 1rem;
+    margin: 0.5rem;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    background: #f8f9fa;
+}
+
+.status-filter {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.slds-table {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.slds-table th {
+    background: #f8f9fa;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.slds-table td {
+    padding: 0.75rem;
+    border-top: 1px solid #d8dde6;
+}
+
+.slds-radio_button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.slds-button {
+    margin-right: 0.5rem;
+}

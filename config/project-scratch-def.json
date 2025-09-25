@@ -1,13 +1,16 @@
 {
   "orgName": "Salesforce PropertyHub",
   "edition": "Enterprise",
-  "features": ["PlatformConnect:1"],
+  "features": ["PlatformConnect:1", "DuplicateRules:1"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
+    },
+    "duplicateRuleSettings": {
+      "enableDuplicateRules": true
     }
   },
   "objectSettings": {
@@ -15,6 +18,12 @@
       "sharingModel": "private"
     },
     "account": {
+      "sharingModel": "readWrite"
+    },
+    "lead": {
+      "sharingModel": "readWrite"
+    },
+    "property__c": {
       "sharingModel": "readWrite"
     }
   }

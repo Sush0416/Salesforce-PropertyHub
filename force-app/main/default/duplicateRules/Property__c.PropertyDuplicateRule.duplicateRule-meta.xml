@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Property__c.PropertyDuplicateRule</fullName>
+    <actionOnInsert>Allow</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <isActive>true</isActive>
+    <description>Alert on duplicate properties based on address</description>
+    <duplicateRuleFilter>
+        <duplicateRuleFilterItems>
+            <field>Address__c</field>
+            <operation>equals</operation>
+            <sortOrder>1</sortOrder>
+            <valueField>Address__c</valueField>
+        </duplicateRuleFilterItems>
+    </duplicateRuleFilter>
+    <masterLabel>Property Duplicate Rule</masterLabel>
+</DuplicateRule>

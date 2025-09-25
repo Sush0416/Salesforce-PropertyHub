@@ -13,6 +13,7 @@ private class PropertyControllerTest {
                 State__c = 'CA',
                 Zip_Code__c = '9000' + i,
                 Price__c = 500000 + (i * 100000),
+                Asking_Price__c = 500000 + (i * 100000),
                 Bathrooms__c = 2 + (i * 0.5),
                 Square_Feet__c = 2000 + (i * 500),
                 Property_Type__c = 'Single Family',

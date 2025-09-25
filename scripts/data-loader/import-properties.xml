@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="propertyImport" class="com.salesforce.dataloader.process.ProcessRunner">
+        <description>Property data import job</description>
+        <property name="name" value="propertyImport"/>
+        <property name="configOverrideMap">
+            <map>
+                <entry key="sfdc.endpoint" value="https://login.salesforce.com"/>
+                <entry key="sfdc.username" value="${sfdc.username}"/>
+                <entry key="sfdc.password" value="${sfdc.password}"/>
+                <entry key="process.operation" value="insert"/>
+                <entry key="sfdc.entity" value="Property__c"/>
+                <entry key="process.mappingFile" value="property-map.sdl"/>
+                <entry key="dataAccess.name" value="scripts/data/import-properties.csv"/>
+                <entry key="process.outputSuccess" value="scripts/data/import/success.properties"/>
+                <entry key="process.outputError" value="scripts/data/import/error.properties"/>
+                <entry key="process.enableExtractStatusOutput" value="true"/>
+                <entry key="process.enableLastRunOutput" value="true"/>
+                <entry key="dataAccess.type" value="csvRead"/>
+                <entry key="process.initialLastRunDate" value="2005-01-01T00:00:00.000Z"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="propertyUpsert" class="com.salesforce.dataloader.process.ProcessRunner">
+        <description>Property data upsert job</description>
+        <property name="name" value="propertyUpsert"/>
+        <property name="configOverrideMap">
+            <map>
+                <entry key="sfdc.endpoint" value="https://login.salesforce.com"/>
+                <entry key="sfdc.username" value="${sfdc.username}"/>
+                <entry key="sfdc.password" value="${sfdc.password}"/>
+                <entry key="process.operation" value="upsert"/>
+                <entry key="sfdc.entity" value="Property__c"/>
+                <entry key="sfdc.externalIdField" value="Address__c"/>
+                <entry key="process.mappingFile" value="property-map.sdl"/>
+                <entry key="dataAccess.name" value="scripts/data/import-properties.csv"/>
+                <entry key="process.outputSuccess" value="scripts/data/import/upsert-success.properties"/>
+                <entry key="process.outputError" value="scripts/data/import/upsert-error.properties"/>
+                <entry key="process.enableExtractStatusOutput" value="true"/>
+                <entry key="process.enableLastRunOutput" value="true"/>
+                <entry key="dataAccess.type" value="csvRead"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

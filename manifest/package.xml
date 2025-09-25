@@ -18,10 +18,6 @@
         <members>*</members>
         <name>LightningComponentBundle</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
 
     <!-- Objects, Fields, Layouts -->
     <types>
@@ -59,25 +55,33 @@
         <name>Flow</name>
     </types>
 
-    <!-- Reports -->
+
+
+    <!-- List Views -->
     <types>
         <members>*</members>
-        <name>Report</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ReportType</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Dashboard</name>
+        <name>ListView</name>
     </types>
 
-    <!-- Email Templates (only include templates that actually exist locally) -->
+    <!-- Lightning Web Components -->
     <types>
-        <members>Visit_Confirmation</members>
-        <!-- Remove Property_Approval_Request since its .email file is missing -->
-        <name>EmailTemplate</name>
+        <members>dataManagementConsole</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <!-- Data Management Classes -->
+    <types>
+        <members>DataManagementController</members>
+        <members>DeploymentManager</members>
+        <members>DuplicateManagement</members>
+        <name>ApexClass</name>
+    </types>
+
+    <!-- Data Management Triggers -->
+    <types>
+        <members>LeadDuplicatePrevention</members>
+        <members>PropertyDuplicateCheck</members>
+        <name>ApexTrigger</name>
     </types>
 
     <version>58.0</version>

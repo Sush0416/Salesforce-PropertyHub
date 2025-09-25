@@ -1,7 +1,7 @@
 @isTest
 public class PropertyApprovalTriggerTest {
     @isTest static void testBeforeUpdateValidation() {
-        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Draft', Price__c=0);
+        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Draft', Price__c=0, Asking_Price__c=0);
         insert prop;
 
         Test.startTest();
@@ -16,7 +16,7 @@ public class PropertyApprovalTriggerTest {
     }
 
     @isTest static void testAfterUpdateApprovalSubmission() {
-        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Draft', Price__c=1000, Address__c='123 Test St', City__c='Test City');
+        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Draft', Price__c=1000, Asking_Price__c=1000, Address__c='123 Test St', City__c='Test City');
         insert prop;
 
         Test.startTest();
@@ -29,7 +29,7 @@ public class PropertyApprovalTriggerTest {
     }
 
     @isTest static void testAfterUpdateApprovalResult() {
-        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Submitted', Price__c=1000);
+        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Submitted', Price__c=1000, Asking_Price__c=1000);
         insert prop;
 
         Test.startTest();

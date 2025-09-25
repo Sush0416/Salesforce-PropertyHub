@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PropertyHub" default="deploy" basedir="." xmlns:sf="antlib:com.salesforce">
+    
+    <!-- Load environment properties -->
+    <property file="build.properties"/>
+    <property environment="env"/>
+    
+    <!-- Set default properties if not defined -->
+    <property name="sf.server" value="https://login.salesforce.com"/>
+    <property name="sf.maxPoll" value="500"/>
+    <property name="sf.pollWaitMillis" value="10000"/>
+    
+    <!-- Define Salesforce ANT tasks -->
+    <taskdef resource="com/salesforce/antlib.xml" 
+             uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="lib/ant-salesforce.jar"/>
+        </classpath>
+    </taskdef>
+    
+    <!-- ========== MAIN TARGETS ========== -->
+    
+    <target name="deploy" description="Full deployment to target org">
+        <antcall target="validate-deployment"/>
+        <antcall target="run-tests"/>
+        <antcall target="deploy-production"/>
+        <antcall target="post-deployment"/>
+    </target>
+    
+    <target name="validate-deployment" description="Validate deployment without actual deployment">
+        <sf:deploy 
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            deployRoot="../src"
+            checkOnly="true"
+            testLevel="RunLocalTests"
+            maxPoll="${sf.maxPoll}"
+            pollWaitMillis="${sf.pollWaitMillis}"
+            logType="Detail"/>
+    </target>
+    
+    <target name="deploy-production" description="Deploy to production org">
+        <sf:deploy 
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            deployRoot="../src"
+            checkOnly="false"
+            testLevel="RunLocalTests"
+            maxPoll="${sf.maxPoll}"
+            pollWaitMillis="${sf.pollWaitMillis}"
+            logType="Detail">
+            <!-- Run specific tests -->
+            <runTest>PropertyManagementTest</runTest>
+            <runTest>LeadManagementTest</runTest>
+            <runTest>DataMigrationTest</runTest>
+        </sf:deploy>
+    </target>
+    
+    <target name="deploy-sandbox" description="Deploy to sandbox org">
+        <sf:deploy 
+            username="${sf.sandbox.username}"
+            password="${sf.sandbox.password}"
+            serverurl="https://test.salesforce.com"
+            deployRoot="../src"
+            checkOnly="false"
+            testLevel="RunLocalTests"
+            maxPoll="${sf.maxPoll}"
+            pollWaitMillis="${sf.pollWaitMillis}"/>
+    </target>
+    
+    <!-- ========== RETRIEVE TARGETS ========== -->
+    
+    <target name="retrieve" description="Retrieve metadata from org">
+        <sf:retrieve 
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            retrieveTarget="../retrieved"
+            packageNames="PropertyHub"
+            unpackaged="../src/package.xml"/>
+    </target>
+    
+    <target name="retrieve-all" description="Retrieve all metadata">
+        <sf:retrieve 
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            retrieveTarget="../retrieved"
+            unpackaged="../src/package.xml"/>
+    </target>
+    
+    <!-- ========== TEST TARGETS ========== -->
+    
+    <target name="run-tests" description="Run all tests">
+        <sf:deploy 
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            deployRoot="../src"
+            checkOnly="true"
+            testLevel="RunAllTestsInOrg"
+            maxPoll="${sf.maxPoll}"
+            pollWaitMillis="${sf.pollWaitMillis}"/>
+    </target>
+    
+    <target name="run-specific-tests" description="Run specific test classes">
+        <sf:deploy 
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            deployRoot="../src"
+            checkOnly="true"
+            testLevel="RunSpecifiedTests"
+            maxPoll="${sf.maxPoll}"
+            pollWaitMillis="${sf.pollWaitMillis}">
+            <runTest>PropertyManagementTest</runTest>
+            <runTest>LeadManagementTest</runTest>
+        </sf:deploy>
+    </target>
+    
+    <!-- ========== DATA OPERATIONS ========== -->
+    
+    <target name="export-data" description="Export data using Data Loader">
+        <java jar="lib/dataloader.jar" fork="true" failonerror="true">
+            <arg value="encrypt"/>
+            <arg value="config"/>
+            <arg value="data-export-config.xml"/>
+        </java>
+    </target>
+    
+    <target name="import-data" description="Import data using Data Loader">
+        <java jar="lib/dataloader.jar" fork="true" failonerror="true">
+            <arg value="encrypt"/>
+            <arg value="config"/>
+            <arg value="data-import-config.xml"/>
+        </java>
+    </target>
+    
+    <!-- ========== UTILITY TARGETS ========== -->
+    
+    <target name="clean" description="Clean build artifacts">
+        <delete dir="../dist"/>
+        <delete dir="../retrieved"/>
+        <mkdir dir="../dist"/>
+    </target>
+    
+    <target name="create-package" description="Create deployment package">
+        <zip destfile="../dist/PropertyHub.zip" 
+             basedir="../src" 
+             includes="**/*"/>
+        <echo message="Package created: dist/PropertyHub.zip"/>
+    </target>
+    
+    <target name="check-deployment-status" description="Check deployment status">
+        <sf:deployRecentValidation 
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            maxPoll="${sf.maxPoll}"
+            pollWaitMillis="${sf.pollWaitMillis}"/>
+    </target>
+    
+    <target name="post-deployment" description="Post-deployment tasks">
+        <echo message="Running post-deployment tasks..."/>
+        <!-- Assign permission sets -->
+        <!-- Update org settings -->
+        <!-- Send notification -->
+        <echo message="Post-deployment tasks completed!"/>
+    </target>
+    
+    <!-- ========== BACKUP TARGETS ========== -->
+    
+    <target name="backup-metadata" description="Backup all metadata">
+        <tstamp>
+            <format property="backup.time" pattern="yyyy-MM-dd-HH-mm"/>
+        </tstamp>
+        
+        <sf:retrieve 
+            username="${sf.username}"
+            password="${sf.password}"
+            serverurl="${sf.serverurl}"
+            retrieveTarget="../backup/metadata-${backup.time}"
+            unpackaged="../src/package.xml"/>
+            
+        <zip destfile="../backup/PropertyHub-metadata-${backup.time}.zip" 
+             basedir="../backup/metadata-${backup.time}"/>
+             
+        <echo message="Metadata backup created: backup/PropertyHub-metadata-${backup.time}.zip"/>
+    </target>
+    
+    <!-- ========== DEPENDENCY CHECKS ========== -->
+    
+    <target name="check-dependencies" description="Check for missing dependencies">
+        <echo message="Checking deployment dependencies..."/>
+        <!-- Add dependency validation logic here -->
+        <available file="lib/ant-salesforce.jar" property="ant.sf.jar.present"/>
+        <fail unless="ant.sf.jar.present" 
+              message="ANT Salesforce JAR not found. Download from Salesforce."/>
+    </target>
+    
+</project>

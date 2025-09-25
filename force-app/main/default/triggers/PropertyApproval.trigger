@@ -18,7 +18,7 @@ trigger PropertyApproval on Property__c (before update, after update) {
                 propertiesForApproval.add(newProp);
             }
             if (newProp.Approval_Status__c == 'Approved' && oldProp.Approval_Status__c == 'Submitted') {
-                PropertyApprovalHandler.handleApprovalResult(new List<Property__c>{newProp});
+                PropertyApprovalHandler.handleApprovalResult(newProp, oldProp);
                 NotificationService.sendApprovalNotification(newProp.Id, 'Approved');
             }
         }

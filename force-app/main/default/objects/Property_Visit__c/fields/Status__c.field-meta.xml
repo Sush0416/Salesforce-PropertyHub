@@ -11,9 +11,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Planned</fullName>
+                <fullName>Scheduled</fullName>
                 <default>true</default>
-                <label>Planned</label>
+                <label>Scheduled</label>
             </value>
             <value>
                 <fullName>Completed</fullName>

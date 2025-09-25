@@ -1,0 +1,16 @@
+.THIS .filter-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.THIS .filter-group {
+    margin-bottom: 16px;
+}
+
+.THIS .filter-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+}

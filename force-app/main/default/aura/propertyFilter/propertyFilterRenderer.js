@@ -1,0 +1,3 @@
+({
+    // Renderer logic if needed
+})

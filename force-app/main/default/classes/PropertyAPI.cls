@@ -17,6 +17,11 @@ public class PropertyAPI {
         }
     }
     
+    @AuraEnabled
+    public static void upsertProperties(List<Property__c> properties) {
+        upsert properties External_Id__c;
+    }
+    
     private static List<Property__c> parseProperties(String jsonData) {
         // Parse JSON and map to Property__c object
         return (List<Property__c>) JSON.deserialize(jsonData, List<Property__c>.class);

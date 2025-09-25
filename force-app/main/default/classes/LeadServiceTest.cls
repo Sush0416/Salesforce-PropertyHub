@@ -12,7 +12,7 @@ private class LeadServiceTest {
             EmailEncodingKey = 'UTF-8',
             LanguageLocaleKey = 'en_US',
             ProfileId = p.Id,
-            Territory_Postal_Code__c = '400001'
+            Territory_Postal_Code__c = '10001'
         );
         insert u;
 
@@ -20,7 +20,7 @@ private class LeadServiceTest {
             FirstName = 'Test',
             LastName = 'Lead',
             Company = 'Test Corp',
-            PostalCode = '400001',
+            PostalCode = '10001',
             Budget__c = 1500000
         );
         insert l;

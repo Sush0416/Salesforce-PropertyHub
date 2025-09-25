@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Lead.LeadDuplicateRule</fullName>
+    <actionOnInsert>Block</actionOnInsert>
+    <actionOnUpdate>Block</actionOnUpdate>
+    <isActive>true</isActive>
+    <description>Prevent duplicate leads based on email and phone</description>
+    <duplicateRuleFilter>
+        <duplicateRuleFilterItems>
+            <field>Email</field>
+            <operation>equals</operation>
+            <sortOrder>1</sortOrder>
+            <valueField>Email</valueField>
+        </duplicateRuleFilterItems>
+        <duplicateRuleFilterItems>
+            <field>Phone</field>
+            <operation>equals</operation>
+            <sortOrder>2</sortOrder>
+            <valueField>Phone</valueField>
+        </duplicateRuleFilterItems>
+    </duplicateRuleFilter>
+    <masterLabel>Lead Duplicate Rule</masterLabel>
+</DuplicateRule>

@@ -7,10 +7,19 @@ private class PropertyApprovalHandlerTest {
             Name = 'Test Property',
             Address__c = '123 Test St',
             Price__c = 250000,
+            Asking_Price__c = 250000,
             Status__c = 'Available',
             Approval_Status__c = 'Draft'
         );
         insert testProp;
+
+        Property_Visit__c visit = new Property_Visit__c(
+            Property__c = testProp.Id,
+            Visit_Date__c = Date.today(),
+            Visit_Time__c = Time.newInstance(10, 0, 0, 0),
+            Status__c = 'Scheduled'
+        );
+        insert visit;
     }
     
     @IsTest

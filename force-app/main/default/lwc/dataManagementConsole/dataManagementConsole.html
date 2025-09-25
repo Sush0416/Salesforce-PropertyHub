@@ -1,0 +1,182 @@
+<template>
+    <div class="data-management-console">
+        <div class="slds-tabs_default">
+            <ul class="slds-tabs_default__nav" role="tablist">
+                <li class="slds-tabs_default__item" title="Import Data" role="presentation">
+                    <a class="slds-tabs_default__link" href="#" role="tab" tabindex="0" aria-selected={isImportTab} data-tab="import" onclick={handleTabClick}>
+                        Import Data
+                    </a>
+                </li>
+                <li class="slds-tabs_default__item" title="Export Data" role="presentation">
+                    <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected={isExportTab} data-tab="export" onclick={handleTabClick}>
+                        Export Data
+                    </a>
+                </li>
+                <li class="slds-tabs_default__item" title="Import History" role="presentation">
+                    <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected={isHistoryTab} data-tab="history" onclick={handleTabClick}>
+                        Import History
+                    </a>
+                </li>
+                <li class="slds-tabs_default__item" title="Statistics" role="presentation">
+                    <a class="slds-tabs_default__link" href="#" role="tab" tabindex="-1" aria-selected={isStatsTab} data-tab="stats" onclick={handleTabClick}>
+                        Statistics
+                    </a>
+                </li>
+            </ul>
+
+            <div class="slds-tabs_default__content" role="tabpanel">
+                <!-- Import Tab -->
+                <div class={importTabClass}>
+                    <div class="slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="data-type">Data Type</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-radio_button-group">
+                                        <span class="slds-button slds-radio_button">
+                                            <input type="radio" id="properties" name="data-type" value="properties" checked onclick={handleTabClick} data-tab="properties" />
+                                            <label class="slds-radio_button__label" for="properties">
+                                                <span class="slds-radio_faux">Properties</span>
+                                            </label>
+                                        </span>
+                                        <span class="slds-button slds-radio_button">
+                                            <input type="radio" id="leads" name="data-type" value="leads" onclick={handleTabClick} data-tab="leads" />
+                                            <label class="slds-radio_button__label" for="leads">
+                                                <span class="slds-radio_faux">Leads</span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-col">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="file-upload">Upload CSV File</label>
+                                <div class="slds-form-element__control">
+                                    <input type="file" id="file-upload" class="slds-input" accept=".csv" onchange={handleFileUpload} />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-col" if:true={isLoading}>
+                            <div class="slds-spinner_container">
+                                <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                                    <span class="slds-assistive-text">Loading</span>
+                                    <div class="slds-spinner__dot-a"></div>
+                                    <div class="slds-spinner__dot-b"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Export Tab -->
+                <div class={exportTabClass}>
+                    <div class="slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="export-data-type">Data Type</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-radio_button-group">
+                                        <span class="slds-button slds-radio_button">
+                                            <input type="radio" id="export-properties" name="export-data-type" value="properties" checked onclick={handleTabClick} data-tab="properties" />
+                                            <label class="slds-radio_button__label" for="export-properties">
+                                                <span class="slds-radio_faux">Properties</span>
+                                            </label>
+                                        </span>
+                                        <span class="slds-button slds-radio_button">
+                                            <input type="radio" id="export-leads" name="export-data-type" value="leads" onclick={handleTabClick} data-tab="leads" />
+                                            <label class="slds-radio_button__label" for="export-leads">
+                                                <span class="slds-radio_faux">Leads</span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-col">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="status-filter">Status Filter</label>
+                                <div class="slds-form-element__control">
+                                    <select class="slds-select status-filter" id="status-filter">
+                                        <option value="All">All</option>
+                                        <option value="Available">Available</option>
+                                        <option value="Sold">Sold</option>
+                                        <option value="Rented">Rented</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-col">
+                            <button class="slds-button slds-button_brand" onclick={exportData}>Export Data</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Tab -->
+                <div class={historyTabClass}>
+                    <div class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <h2 class="slds-text-heading_small slds-col">Import History</h2>
+                        </div>
+                        <div class="slds-card__body">
+                            <div class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <table class="slds-table">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th class="slds-text-title_caps" scope="col">Timestamp</th>
+                                            <th class="slds-text-title_caps" scope="col">Object Type</th>
+                                            <th class="slds-text-title_caps" scope="col">Records</th>
+                                            <th class="slds-text-title_caps" scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={importHistory} for:item="entry">
+                                            <tr key={entry} class="slds-hint-parent">
+                                                <td>{entry}</td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Tab -->
+                <div class={statsTabClass}>
+                    <div class="slds-grid slds-grid_vertical">
+                        <div class="slds-col">
+                            <div class="slds-card">
+                                <div class="slds-card__header">
+                                    <h2 class="slds-text-heading_small">Data Statistics</h2>
+                                </div>
+                                <div class="slds-card__body">
+                                    <div class="slds-grid slds-grid_vertical">
+                                        <div class="slds-col">
+                                            <div class="slds-box">
+                                                <div class="slds-text-heading_medium">Properties</div>
+                                                <div class="slds-text-body_regular">Total: {dataStats.totalProperties}</div>
+                                                <div class="slds-text-body_regular">Duplicates: {dataStats.duplicateProperties}</div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-col">
+                                            <div class="slds-box">
+                                                <div class="slds-text-heading_medium">Leads</div>
+                                                <div class="slds-text-body_regular">Total: {dataStats.totalLeads}</div>
+                                                <div class="slds-text-body_regular">Duplicates: {dataStats.duplicateLeads}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

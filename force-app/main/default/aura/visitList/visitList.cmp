@@ -1,0 +1,47 @@
+<aura:component>
+    <aura:attribute name="visits" type="Property_Visit__c[]" />
+    
+    <aura:if isTrue="{!empty(v.visits)}">
+        <div class="empty-state">
+            <p>No visits scheduled for this property.</p>
+        </div>
+        <aura:set attribute="else">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Visitor Name">Visitor Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Visit Date">Visit Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Visit Time">Visit Time</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Status">Status</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.visits}" var="visit">
+                        <tr class="slds-hint-parent">
+                            <th data-label="Visitor Name" scope="row">
+                                <div class="slds-truncate" title="Visitor Name">{!visit.Visitor_Name__c}</div>
+                            </th>
+                            <td data-label="Visit Date">
+                                <div class="slds-truncate" title="Visit Date">{!visit.Visit_Date__c}</div>
+                            </td>
+                            <td data-label="Visit Time">
+                                <div class="slds-truncate" title="Visit Time">{!visit.Visit_Time__c}</div>
+                            </td>
+                            <td data-label="Status">
+                                <div class="slds-truncate" title="Status">{!visit.Status__c}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </aura:set>
+    </aura:if>
+</aura:component>

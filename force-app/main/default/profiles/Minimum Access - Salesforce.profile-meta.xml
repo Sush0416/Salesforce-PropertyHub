@@ -149,6 +149,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>BusinessHoursSetup</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CollectionExample</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -197,6 +201,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>OrgSetupController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>PropertyApprovalHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -210,6 +218,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>PropertyBatchScheduler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PropertyController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PropertyControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -229,6 +245,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>SMSService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>SchedulePropertyCleanup</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -238,6 +258,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TerritoryAssignmentTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>UserSetupUtility</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>VisitBatch</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -294,6 +322,26 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Data_Migration_Log__c.Batch_Size__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Data_Migration_Log__c.Error_Message__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Data_Migration_Log__c.Object_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Data_Migration_Log__c.Timestamp__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Enrollment__c.Enrollment_Date__c</field>
         <readable>true</readable>
@@ -302,6 +350,11 @@
         <editable>true</editable>
         <field>Enrollment__c.Status__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Lead.IsDuplicate__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -409,9 +462,14 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
+        <field>Property_Visit__c.Phone__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Property_Visit__c.Status__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -460,6 +518,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Property__c.Bedrooms__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Property__c.City__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -476,6 +539,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Property__c.Description__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Property__c.IsDuplicate__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -558,6 +626,24 @@
         <field>Student__c.Enrollment__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Visit_Confirmed__e.Customer__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Visit_Confirmed__e.DateTime__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Visit_Confirmed__e.Visit_Id__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <layoutAssignments>
+        <layout>Address-Address Layout</layout>
+    </layoutAssignments>
     <layoutAssignments>
         <layout>Agent_Territory__c-Agent Territory Layout</layout>
     </layoutAssignments>
@@ -575,6 +661,12 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>Appointment__c-Appointment Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ApptBundleConfig-Appointment Bundle Config Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ApptBundlePolicy-Appointment Bundle Policy Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>AssetAction-Asset Action Layout</layout>
@@ -640,6 +732,12 @@
         <layout>ContractLineItem-Contract Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ContractLineOutcome-Contract Line Outcome Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ContractLineOutcomeData-Contract Line Outcome Data Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>CredentialStuffingEventStore-Credential Stuffing Event Store Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -658,7 +756,13 @@
         <layout>DataUsePurpose-Data Use Purpose Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Data_Migration_Log__c-Data Migration Log Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Date__c-Date Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>DynamicDataCapture-Dynamic Data Capture Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>EmailMessage-Email Message Layout</layout>
@@ -679,6 +783,15 @@
         <layout>EntityMilestone-Object Milestone Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Expense-Expense Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ExpenseReport-Expense Report Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ExpenseReportEntry-Expense Report Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Feature__c-Feature Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -691,6 +804,12 @@
         <layout>FinanceTransaction-Finance Transaction Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>FldSvcObjChg-Field Service Object Change Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>FldSvcObjChgDtl-Field Service Object Change Detail Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>FlowRecord-Flow Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -698,6 +817,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>GuestUserAnomalyEventStore-Guest User Anomaly Event Store Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>JobProfile-Job Profile Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>LegalEntity-Legal Entity Layout</layout>
@@ -721,6 +843,15 @@
         <layout>LoginAnomalyEventStore-Login Anomaly Event Store Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>MaintenanceAsset-Maintenance Asset Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>MaintenancePlan-Maintenance Plan Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>MaintenanceWorkRule-Maintenance Work Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Manager__c-Manager Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -730,6 +861,9 @@
         <layout>Offer__c-Offer Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>OperatingHoursHoliday-Operating Hours Holiday Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Patient__c-Patient Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -737,6 +871,39 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>ProcessException-Process Exception Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductConsumed-Product Consumed Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductConsumedState-Product Consumed State Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductItem-Product Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductItemTransaction-Product Item Transaction Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductRequest-Product Request Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductRequestLineItem-Product Request Line Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductRequired-Product Required Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductServiceCampaign-Product Service Campaign Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductServiceCampaignItem-Product Service Campaign Item Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductTransfer-Product Transfer Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ProductTransferState-Product Transfer State Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Property_Features__c-Property Feature Layout</layout>
@@ -756,6 +923,12 @@
         <recordType>Property__c.Residential</recordType>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>RecordsetFilterCriteria-Recordset Filter Criteria Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>RecordsetFilterCriteriaRule-Recordset Filter Criteria Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ReportAnomalyEventStore-Report Anomaly Event Store Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -771,7 +944,25 @@
         <layout>ReturnOrderLineItem-Return Order Line Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>SchedulingConstraint-Scheduling Constraint Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SchedulingObjective-Scheduling Objective Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SchedulingRule-Scheduling Rule Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SchedulingWorkspace-Scheduling Workspace Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SchedulingWorkspaceTerritory-Scheduling Workspace Territory Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Seller-Seller Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ServiceAppointmentCapacityUsage-Service Appointment Capacity Usage Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ServiceAppointmentShift-Service Appointment Shift Layout</layout>
@@ -780,13 +971,37 @@
         <layout>ServiceContract-Service Contract Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ServiceCrew-Service Crew Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ServiceCrewMember-Service Crew Member Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ServiceResourcePreference-Service Resource Preference Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>SessionHijackingEventStore-Session Hijacking Event Store Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Shift-Shift Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>ShiftPattern-Shift Pattern Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ShiftPatternEntry-Shift Pattern Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ShiftSchedulingOperation-Shift Scheduling Operation Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>ShiftTemplate-Shift Template Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ShiftWorkTopic-Shift Work Topic Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Shipment-Shipment Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>ShippingConfigurationSet-Shipping Configuration Set Layout</layout>
@@ -804,10 +1019,25 @@
         <layout>Student__c-Student Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Swarm-Swarm Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>SwarmMember-Swarm Member Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>ThreatDetectionFeedback-Threat Detection Feedback Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>TimeSheet-Time Sheet Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>TimeSheetEntry-Time Sheet Entry Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Time__c-Time Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>TravelMode-Travel Mode Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>UserAlt-User Profile Layout</layout>
@@ -831,6 +1061,9 @@
         <layout>Waitlist-%5F%5FMISSING LABEL%5F%5F PropertyFile - val Waitlist not found in section StandardLayouts</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>WarrantyTerm-Warranty Term Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>WebCart-Cart Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -846,6 +1079,15 @@
         <layout>WebStoreConfig-Web Store Configuration Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>WorkCapacityAvailability-Work Capacity Availability Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkCapacityLimit-Work Capacity Limit Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkCapacityUsage-Work Capacity Usage Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>WorkOrder-Work Order Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -853,6 +1095,9 @@
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkPlan-Work Plan Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>WorkPlanSelectionRule-Work Plan Selection Rule Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>WorkPlanTemplate-Work Plan Template Layout</layout>

@@ -1,0 +1,41 @@
+<aura:component>
+    <aura:attribute name="filters" type="Map" default="{}" />
+    <aura:registerEvent name="filterChange" type="c:PropertyFilterChange" />
+    
+    <div class="filter-container">
+        <h3>Filter Properties</h3>
+        <div class="filter-group">
+            <label>Property Type</label>
+            <lightning:select aura:id="propertyType" value="{!v.filters.propertyType}" onchange="{!c.handleFilterChange}">
+                <option value="">All Types</option>
+                <option value="House">House</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Condo">Condo</option>
+                <option value="Townhouse">Townhouse</option>
+            </lightning:select>
+        </div>
+        
+        <div class="filter-group">
+            <label>Status</label>
+            <lightning:select aura:id="status" value="{!v.filters.status}" onchange="{!c.handleFilterChange}">
+                <option value="">All Statuses</option>
+                <option value="Available">Available</option>
+                <option value="Under Contract">Under Contract</option>
+                <option value="Sold">Sold</option>
+            </lightning:select>
+        </div>
+        
+        <div class="filter-group">
+            <label>Min Price</label>
+            <lightning:input type="number" aura:id="minPrice" value="{!v.filters.minPrice}" onchange="{!c.handleFilterChange}" />
+        </div>
+        
+        <div class="filter-group">
+            <label>Max Price</label>
+            <lightning:input type="number" aura:id="maxPrice" value="{!v.filters.maxPrice}" onchange="{!c.handleFilterChange}" />
+        </div>
+        
+        <lightning:button label="Apply Filters" onclick="{!c.applyFilters}" variant="brand" />
+        <lightning:button label="Clear Filters" onclick="{!c.clearFilters}" variant="neutral" />
+    </div>
+</aura:component>

@@ -1,0 +1,47 @@
+<aura:component>
+    <aura:attribute name="offers" type="Offer__c[]" />
+    
+    <aura:if isTrue="{!empty(v.offers)}">
+        <div class="empty-state">
+            <p>No offers for this property.</p>
+        </div>
+        <aura:set attribute="else">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Buyer Name">Buyer Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Offer Amount">Offer Amount</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Offer Date">Offer Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Status">Status</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.offers}" var="offer">
+                        <tr class="slds-hint-parent">
+                            <th data-label="Buyer Name" scope="row">
+                                <div class="slds-truncate" title="Buyer Name">{!offer.Buyer_Name__c}</div>
+                            </th>
+                            <td data-label="Offer Amount">
+                                <div class="slds-truncate" title="Offer Amount">{!'$' + offer.Offer_Amount__c}</div>
+                            </td>
+                            <td data-label="Offer Date">
+                                <div class="slds-truncate" title="Offer Date">{!offer.Offer_Date__c}</div>
+                            </td>
+                            <td data-label="Status">
+                                <div class="slds-truncate" title="Status">{!offer.Status__c}</div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </aura:set>
+    </aura:if>
+</aura:component>

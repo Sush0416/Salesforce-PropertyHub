@@ -32,10 +32,10 @@ public with sharing class PropertyApprovalHandler {
     public static void handleApprovalResult(List<Property__c> newProperties, Map<Id, Property__c> oldMap) {
         List<Property__c> approvedProperties = new List<Property__c>();
         List<Property__c> rejectedProperties = new List<Property__c>();
-        
+
         for (Property__c newProp : newProperties) {
             Property__c oldProp = oldMap.get(newProp.Id);
-            
+
             // Check if the status was changed TO 'Approved' FROM 'Submitted'
             if (newProp.Approval_Status__c == Constants.PROPERTY_STATUS_APPROVED && oldProp.Approval_Status__c == Constants.PROPERTY_STATUS_SUBMITTED) {
                 approvedProperties.add(newProp);
@@ -45,22 +45,27 @@ public with sharing class PropertyApprovalHandler {
                 rejectedProperties.add(newProp);
             }
         }
-        
+
         // Process approved properties
         for (Property__c prop : approvedProperties) {
             prop.Status__c = Constants.PROPERTY_AVAILABLE;
             prop.Last_Approval_Date__c = System.today();
             // Add any other post-approval logic here
         }
-        
+
         // Process rejected properties
         // You could add specific logic for rejected properties here if needed
         // for (Property__c prop : rejectedProperties) { ... }
-        
+
         // Notify relevant users
         if (!approvedProperties.isEmpty() || !rejectedProperties.isEmpty()) {
             notifyApprovers(approvedProperties, rejectedProperties);
         }
+    }
+
+    // Overload for single property
+    public static void handleApprovalResult(Property__c newProp, Property__c oldProp) {
+        handleApprovalResult(new List<Property__c>{newProp}, new Map<Id, Property__c>{newProp.Id => oldProp});
     }
     
     // Bulkified email notification method

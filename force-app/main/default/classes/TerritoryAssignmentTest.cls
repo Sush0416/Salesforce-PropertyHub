@@ -16,7 +16,7 @@ public class TerritoryAssignmentTest {
             ProfileId = p.Id,
             TimeZoneSidKey = 'Asia/Kolkata',
             UserName = 'northuser'+Math.random()+'@example.com',
-            Territory_Postal_Code__c = '100001'
+            Territory_Postal_Code__c = '10001'
         );
         insert northUser;
 
@@ -30,7 +30,7 @@ public class TerritoryAssignmentTest {
             ProfileId = p.Id,
             TimeZoneSidKey = 'Asia/Kolkata',
             UserName = 'southuser'+Math.random()+'@example.com',
-            Territory_Postal_Code__c = '200001'
+            Territory_Postal_Code__c = '20001'
         );
         insert southUser;
 

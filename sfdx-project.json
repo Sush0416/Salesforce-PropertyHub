@@ -8,5 +8,5 @@
   "name": "Salesforce_PropertyHub",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "64.0"
+  "sourceApiVersion": "59.0"
 }
