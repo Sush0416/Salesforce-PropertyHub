@@ -1,7 +1,9 @@
 @isTest
 public class PropertyApprovalTriggerTest {
     @isTest static void testBeforeUpdateValidation() {
-        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Draft', Price__c=0, Asking_Price__c=0);
+        Opportunity opp = new Opportunity(Name='Test Opp 1', StageName='Prospecting', CloseDate=Date.today().addDays(30));
+        insert opp;
+        Property__c prop = new Property__c(Name='Test Property 1', Approval_Status__c='Draft', Price__c=0, Asking_Price__c=0, Address__c='123 Test St', Visit_DateTime__c=DateTime.now(), Opportunity__c=opp.Id);
         insert prop;
 
         Test.startTest();
@@ -16,7 +18,9 @@ public class PropertyApprovalTriggerTest {
     }
 
     @isTest static void testAfterUpdateApprovalSubmission() {
-        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Draft', Price__c=1000, Asking_Price__c=1000, Address__c='123 Test St', City__c='Test City');
+        Opportunity opp = new Opportunity(Name='Test Opp 2', StageName='Prospecting', CloseDate=Date.today().addDays(30));
+        insert opp;
+        Property__c prop = new Property__c(Name='Test Property 2', Approval_Status__c='Draft', Price__c=1000, Asking_Price__c=1000, Address__c='123 Test St', City__c='Test City', Visit_DateTime__c=DateTime.now(), Opportunity__c=opp.Id);
         insert prop;
 
         Test.startTest();
@@ -29,7 +33,9 @@ public class PropertyApprovalTriggerTest {
     }
 
     @isTest static void testAfterUpdateApprovalResult() {
-        Property__c prop = new Property__c(Name='Test Property', Approval_Status__c='Submitted', Price__c=1000, Asking_Price__c=1000);
+        Opportunity opp = new Opportunity(Name='Test Opp 3', StageName='Prospecting', CloseDate=Date.today().addDays(30));
+        insert opp;
+        Property__c prop = new Property__c(Name='Test Property 3', Approval_Status__c='Submitted', Price__c=1000, Asking_Price__c=1000, Address__c='123 Test St', Visit_DateTime__c=DateTime.now(), Opportunity__c=opp.Id);
         insert prop;
 
         Test.startTest();

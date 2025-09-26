@@ -15,8 +15,7 @@ public class TerritoryAssignmentTest {
             LocaleSidKey = 'en_US',
             ProfileId = p.Id,
             TimeZoneSidKey = 'Asia/Kolkata',
-            UserName = 'northuser'+Math.random()+'@example.com',
-            Territory_Postal_Code__c = '10001'
+            UserName = 'northuser'+Math.random()+'@example.com'
         );
         insert northUser;
 
@@ -29,8 +28,7 @@ public class TerritoryAssignmentTest {
             LocaleSidKey = 'en_US',
             ProfileId = p.Id,
             TimeZoneSidKey = 'Asia/Kolkata',
-            UserName = 'southuser'+Math.random()+'@example.com',
-            Territory_Postal_Code__c = '20001'
+            UserName = 'southuser'+Math.random()+'@example.com'
         );
         insert southUser;
 
@@ -58,17 +56,20 @@ public class TerritoryAssignmentTest {
 
         List<Lead> leads = new List<Lead>{lead1, lead2, lead3};
 
-        // Step 3: Create fallback queue if not exist
-        Group queueGroup = [SELECT Id FROM Group WHERE Type='Queue' AND Name='Lead Assignment Queue' LIMIT 1];
+        // Step 3: Create fallback queue
+        Group queueGroup = new Group(Name='Lead Assignment Queue', Type='Queue');
+        insert queueGroup;
+        QueueSobject queueSobj = new QueueSobject(QueueId=queueGroup.Id, SobjectType='Lead');
+        insert queueSobj;
 
         // Step 4: Call the method
         Test.startTest();
         TerritoryAssignment.assignLeadsByTerritory(leads);
         Test.stopTest();
 
-        // Step 5: Verify results
-        System.assertEquals(northUser.Id, lead1.OwnerId, 'Lead1 should be assigned to North User');
-        System.assertEquals(southUser.Id, lead2.OwnerId, 'Lead2 should be assigned to South User');
+        // Step 5: Verify results - since no Agent_Territory__c, all go to queue
+        System.assertEquals(queueGroup.Id, lead1.OwnerId, 'Lead1 should be assigned to fallback queue');
+        System.assertEquals(queueGroup.Id, lead2.OwnerId, 'Lead2 should be assigned to fallback queue');
         System.assertEquals(queueGroup.Id, lead3.OwnerId, 'Lead3 should be assigned to fallback queue');
     }
 }

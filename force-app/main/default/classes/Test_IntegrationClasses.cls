@@ -23,7 +23,7 @@ public class Test_IntegrationClasses {
         public HttpResponse respond(HttpRequest req) {
             HttpResponse res = new HttpResponse();
             res.setStatusCode(200);
-            res.setBody('[{"External_Id__c":"P001","Name":"Test Property","Asking_Price__c":100000}]');
+            res.setBody('[{"External_Id__c":"P001","Name":"Test Property","Asking_Price__c":100000,"Price__c":100000,"Address__c":"123 Test St","Visit_DateTime__c":"2023-01-01T10:00:00Z"}]');
             return res;
         }
     }

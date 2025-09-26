@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label>Sales Agent</label>
     <description>Permission set for Sales Agents in PropertyHub</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Lead.Interest_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Agent</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -16,5 +17,4 @@
         <object>Lead</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-
 </PermissionSet>

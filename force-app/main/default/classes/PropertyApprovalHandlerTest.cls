@@ -3,13 +3,22 @@
 private class PropertyApprovalHandlerTest {
     @TestSetup
     static void setup() {
+        Opportunity opp = new Opportunity(
+            Name = 'Test Opportunity',
+            StageName = 'Prospecting',
+            CloseDate = Date.today().addDays(30)
+        );
+        insert opp;
+
         Property__c testProp = new Property__c(
             Name = 'Test Property',
             Address__c = '123 Test St',
             Price__c = 250000,
             Asking_Price__c = 250000,
             Status__c = 'Available',
-            Approval_Status__c = 'Draft'
+            Approval_Status__c = 'Draft',
+            Visit_DateTime__c = DateTime.now(),
+            Opportunity__c = opp.Id
         );
         insert testProp;
 

@@ -1,88 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-
-    <!-- Apex Classes -->
-    <types>
-        <members>*</members>
-        <name>ApexClass</name>
-    </types>
-
-    <!-- Apex Triggers -->
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-
-    <!-- Lightning Components -->
-    <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
-    </types>
-
-    <!-- Objects, Fields, Layouts -->
     <types>
         <members>*</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>*</members>
-        <name>Layout</name>
+        <name>ReportType</name>
     </types>
-
-    <!-- Profiles & Permission Sets -->
     <types>
         <members>*</members>
-        <name>Profile</name>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Dashboard</name>
     </types>
     <types>
         <members>*</members>
         <name>PermissionSet</name>
     </types>
-
-    <!-- Tabs & Apps -->
     <types>
         <members>*</members>
-        <name>CustomTab</name>
+        <name>SharingRules</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>CustomApplication</name>
-    </types>
-
-    <!-- Flows -->
-    <types>
-        <members>*</members>
-        <name>Flow</name>
-    </types>
-
-
-
-    <!-- List Views -->
-    <types>
-        <members>*</members>
-        <name>ListView</name>
-    </types>
-
-    <!-- Lightning Web Components -->
-    <types>
-        <members>dataManagementConsole</members>
-        <name>LightningComponentBundle</name>
-    </types>
-
-    <!-- Data Management Classes -->
-    <types>
-        <members>DataManagementController</members>
-        <members>DeploymentManager</members>
-        <members>DuplicateManagement</members>
-        <name>ApexClass</name>
-    </types>
-
-    <!-- Data Management Triggers -->
-    <types>
-        <members>LeadDuplicatePrevention</members>
-        <members>PropertyDuplicateCheck</members>
-        <name>ApexTrigger</name>
-    </types>
-
     <version>58.0</version>
 </Package>

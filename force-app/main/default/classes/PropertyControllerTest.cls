@@ -3,6 +3,14 @@ private class PropertyControllerTest {
     
     @TestSetup
     static void setupTestData() {
+        // Create test opportunity
+        Opportunity opp = new Opportunity(
+            Name = 'Test Opportunity',
+            StageName = 'Prospecting',
+            CloseDate = Date.today().addDays(30)
+        );
+        insert opp;
+
         // Create test properties
         List<Property__c> testProperties = new List<Property__c>();
         for (Integer i = 0; i < 5; i++) {
@@ -18,7 +26,9 @@ private class PropertyControllerTest {
                 Square_Feet__c = 2000 + (i * 500),
                 Property_Type__c = 'Single Family',
                 Status__c = 'Available',
-                Listing_Date__c = Date.today().addDays(-30)
+                Listing_Date__c = Date.today().addDays(-30),
+                Visit_DateTime__c = DateTime.now().addDays(7),
+                Opportunity__c = opp.Id
             ));
         }
         insert testProperties;

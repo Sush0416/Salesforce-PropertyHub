@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Property__c.Share_Properties_By_Region</fullName>
+        <accessLevel>ReadWrite</accessLevel>
+        <label>Share Properties By Region</label>
+        <sharedTo>
+            <allInternalUsers>true</allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Region__c</field>
+            <operation>equals</operation>
+            <value>North</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingGuestRules>
+    </sharingGuestRules>
+</SharingRules>

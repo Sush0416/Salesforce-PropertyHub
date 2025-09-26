@@ -11,8 +11,7 @@ private class LeadServiceTest {
             LocaleSidKey = 'en_US',
             EmailEncodingKey = 'UTF-8',
             LanguageLocaleKey = 'en_US',
-            ProfileId = p.Id,
-            Territory_Postal_Code__c = '10001'
+            ProfileId = p.Id
         );
         insert u;
 
